@@ -10,8 +10,8 @@ class Application
  
     if req.path.start_with?("/items/")
       item_input = req.path.split("/items/").last
-      
       selected_item = @@items.select{|item| item.name == item_input}.first
+      
       if selected_item != nil 
         resp.write selected_item.price
       else 
